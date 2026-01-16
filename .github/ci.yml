@@ -1,0 +1,19 @@
+# name trigger jobs steps  
+name: react ci
+on: push
+
+jobs:
+run-test:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout Code
+      users: actions/checkout@v4
+
+    - name: install dependencies
+      run: npm install
+
+    - name: Run-test
+      run: npm run test 
+      
+      with: 
+      node-version: 18 
